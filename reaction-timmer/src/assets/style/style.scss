@@ -1,0 +1,9 @@
+@import '../../../../style/scss/remove_common_style';
+@import '../../../../style/scss/button/button_nomal';
+
+#app {
+    padding-top:120px;
+    text-align: center;
+    background-color: rgb(214, 231, 255);
+    height: 100vh;
+}
