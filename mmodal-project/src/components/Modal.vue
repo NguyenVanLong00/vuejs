@@ -1,8 +1,10 @@
 <template>
     <div class="backdrop" @click.self="closeModal">
-        <div class="modal" :class="{sale:theme === 'sale'}">
-            <h2>{{ header }} </h2>
-            <p>{{ text }}</p>
+        <div class="modal box" :class="{sale:theme === 'sale'}">
+            <slot></slot>
+            <div class="actions">
+                <slot name="links"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -36,7 +38,7 @@ export default ({
         height: 100vh;
     }
     .sale {
-        background-color: rgb(109, 18, 18);
+        background-color: rgb(170, 104, 104);
         color:white;
     }
 
