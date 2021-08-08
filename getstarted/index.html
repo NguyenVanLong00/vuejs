@@ -1,16 +1,33 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue js</title>
-    <link rel="stylesheet" href="../style/getstart/style.css" >
+    <link rel="stylesheet" href="../style/getstart/style.css">
     <script src="https://unpkg.com/vue@next"></script>
 </head>
+
 <body>
     <div id="app">
-        <p>{{ title }}</p>
+
+        <button class="button" @click="showBook = !showBook">
+            <span v-show="!showBook">show book</span>
+            <span v-show="showBook">hide book</span>
+        </button>
+        <div v-show="showBook">
+            <ul>
+                <li v-for="book in filteredBook" :class={fav_book:book.isFav} @click="book.isFav =! book.isFav">
+                    <img :src="book.url" :alt="book.title" />
+                    <h3>the book: {{ book.title}}</h3>
+                    <p>price: {{book.price}}</p>
+                </li>
+            </ul>
+        </div>
+       
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,9 +1,28 @@
+@import '../scss/remove_common_style';
+@import '../scss/button/button_nomal';
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 1rem;
 }
 
-p{
-    font-size: 48px;
+.box {
+    width: 10rem;
+    height:10rem;
+    margin:1rem;
+    background-color: tomato;
+    &:hover{
+        background-color: darken($color: tomato, $amount: 20);
+    }    
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-top: 1rem;
+    background-color: darkgray;
+}
+.fav_book {
+    background-color: goldenrod;
 }
